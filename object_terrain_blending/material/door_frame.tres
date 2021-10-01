@@ -1,0 +1,24 @@
+[gd_resource type="ShaderMaterial" load_steps=6 format=2]
+
+[ext_resource path="res://tex/TexturesCom_Wall_ConcreteDamagedRebar_3x3_1K_albedo.png" type="Texture" id=1]
+[ext_resource path="res://tex/TexturesCom_Grass0052_1_seamless_S.jpg" type="Texture" id=2]
+[ext_resource path="res://shader/basic_blending.gdshader" type="Shader" id=3]
+
+[sub_resource type="OpenSimplexNoise" id=1]
+period = 8.0
+persistence = 0.0
+
+[sub_resource type="NoiseTexture" id=2]
+seamless = true
+noise = SubResource( 1 )
+
+[resource]
+shader = ExtResource( 3 )
+shader_param/n = Vector3( 0, 1, 0 )
+shader_param/triplanar_scale = 0.25
+shader_param/blend_size = 0.6
+shader_param/blend_offset = 0.0
+shader_param/uv1_blend_sharpness = 1.0
+shader_param/main_albedo = ExtResource( 1 )
+shader_param/blend_albedo = ExtResource( 2 )
+shader_param/transition_mask = SubResource( 2 )

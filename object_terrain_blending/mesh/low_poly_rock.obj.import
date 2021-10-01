@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/low_poly_rock.obj-725a66d6864aa1506a3e56d310793c01.mesh"
+
+[deps]
+
+files=[ "res://.import/low_poly_rock.obj-725a66d6864aa1506a3e56d310793c01.mesh" ]
+
+source_file="res://mesh/low_poly_rock.obj"
+dest_files=[ "res://.import/low_poly_rock.obj-725a66d6864aa1506a3e56d310793c01.mesh", "res://.import/low_poly_rock.obj-725a66d6864aa1506a3e56d310793c01.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

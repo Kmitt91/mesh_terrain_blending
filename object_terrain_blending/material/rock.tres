@@ -1,0 +1,33 @@
+[gd_resource type="ShaderMaterial" load_steps=9 format=2]
+
+[ext_resource path="res://shader/pbr_blending.gdshader" type="Shader" id=1]
+[ext_resource path="res://tex/TexturesCom_Concrete_RoughWall_1K_albedo.png" type="Texture" id=2]
+[ext_resource path="res://tex/TexturesCom_Concrete_RoughWall_1K_normal.png" type="Texture" id=3]
+[ext_resource path="res://tex/TexturesCom_Grass0052_1_seamless_S.jpg" type="Texture" id=4]
+[ext_resource path="res://tex/TexturesCom_Concrete_RoughWall_1K_ao.png" type="Texture" id=5]
+
+[sub_resource type="StreamTexture" id=3]
+flags = 7
+load_path = "res://.import/concrete_Roughness.png-f3fd2479b01818cd22eaa5aa9de858f0.s3tc.stex"
+
+[sub_resource type="OpenSimplexNoise" id=1]
+octaves = 9
+period = 8.0
+persistence = 0.0
+
+[sub_resource type="NoiseTexture" id=2]
+seamless = true
+noise = SubResource( 1 )
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/n = Vector3( 0, 1, 0 )
+shader_param/triplanar_scale = 0.25
+shader_param/blend_size = 0.731
+shader_param/blend_offset = 0.0
+shader_param/transition_mask = SubResource( 2 )
+shader_param/main_albedo = ExtResource( 2 )
+shader_param/main_normal = ExtResource( 3 )
+shader_param/main_roughness = SubResource( 3 )
+shader_param/main_ao = ExtResource( 5 )
+shader_param/blend_albedo = ExtResource( 4 )
